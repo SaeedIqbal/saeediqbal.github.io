@@ -1,7 +1,169 @@
 <html>
-<head>
-</head>
-<body>
-<h1>Welcome to AI</h1>
-</body>
+  <head>
+    <title>Justin Johnson</title>
+    <script src='js/jquery-1.11.2.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <link href='css/bootstrap.min.css' rel='stylesheet'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,100italic,100,300,300italic,400italic,500italic,900italic,700italic' rel='stylesheet' type='text/css'>
+    <style>
+      body {
+        font-family: 'sans-serif';
+        font-size: 16px;
+        background-color: #FFFCF4;
+        color: #4F6071;
+      }
+      .color1 {
+        background-color: #CCC;
+      }
+      #header {
+        width: 100%;
+        height: 360px;
+        background-color: #F0EAD6
+        /* background-color: #b30000; */
+        /* background-color: #CCC; */
+      }
+      #header-inner {
+        position: absolute;
+        width: 70%;
+        left: 30%;
+        top: 150px;
+      }
+      .img-me {
+        border: 3px solid white;
+        float: left;
+        height: 200px;
+      }
+      .header-text {
+        margin-top: 60px;
+        margin-left: 220px;
+      }
+      .header-text-name {
+        font-weight: bold;
+        font-size: 40px;
+      }
+      .header-text-email {
+        font-size: 20px;
+        font-style: italic;
+      }
+      .header-text-desc {
+        font-size: 20px;
+      }
+      #contact-info {
+        position: absolute;
+        left: 80%;
+        width: 20%;
+        top: 360px;
+        height: 100px;
+        background-color: #EEE;
+      }
+      .vspace {
+        margin-bottom: 20px;
+      }
+      .vspace-top {
+        margin-top: 30px;
+      }
+      .paper-image {
+        width: 150px;
+      }
+      .paper-title {
+        font-weight: bold;
+      }
+      .paper-authors {
+        font-style: italic;
+      }
+      .paper-link {
+      }
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-50623594-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div id='header'>
+      <div id='header-inner'>
+        <img src='images/saeed.jpeg' class='img-circle img-me'>
+        <div class='header-text'>
+          <div class='header-text-name'>
+            Saeed Iqbal Khattak
+          </div>
+          <div class='header-text-email'>
+            saeediqbalkhatta[at]gmail[dot]com
+          </div>
+          <div>
+            <a href="https://github.com/saeediqbal">[GitHub]</a>
+            <a href="https://scholar.google.com">[Google Scholar]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='container'>
+      <div class='col-xs-10 col-md-offset-1'>
+        <div class='row'>
+          <h1>About</h1>
+          <div class='vspace'>
+            I'm broadly interested in machine learning and computer vision.
+            My research involves unsupervised image segmentation, vision and language, image generation and visual reasoning using deep neural networks.
+          </div>
+          <div class='vspace'>
+            I am currently working as an Assistant Professor at <a href = "www.ucp.edu.pk"> University of Central Punjab</a>, Lahore, Pakistan
+          </div>
+          <div class='vspace'>
+            I completed my PhD at Stanford University, advised by
+            <a href="http://vision.stanford.edu/feifeili/" target='_blank'>Fei-Fei Li</a>.
+            At Stanford I co-taught
+            <a href="http://cs231n.stanford.edu", target='_blank'>
+              CS 231N: Convolutional Neural Networks for Visual Recognition
+            </a>
+            with
+            <a href="http://vision.stanford.edu/feifeili/" target='_blank'>Fei-Fei Li</a>,
+            <a href='https://cs.stanford.edu/people/karpathy/' target='_blank'>Andrej Karpathy</a>
+            (in <a href='http://cs231n.stanford.edu/2016' target='_blank'>2016</a>),
+            and <a href='http://ai.stanford.edu/~syyeung/' target='_blank'>Serena Yeung</a>
+            (in <a href='http://cs231n.stanford.edu/2017' target='_blank'>2017</a>
+            and <a href='http://cs231n.stanford.edu/2018' target='_blank'>2018</a>).
+          </div>
+          <div class='vspace'>
+            Starting Fall 2019 I will join
+            <a href='http://www.eecs.umich.edu/cse/' target='_blank'>
+              University of Michigan Computer Science and Engineering
+            </a>
+            as an Assistant Professor. I am looking for strong students to join my research
+            group, so please get in touch if you would like to work with me.
+          </div>
+        </div>
+        <div class='row vspace-top'>
+          <h1>Side Projects</h1>
+          <a href='https://github.com/jcjohnson/neural-style' target='_blank'>
+            <h2>neural-style</h2>
+          </a>
+          A Torch implementation of the neural style transfer algorithm from the paper
+          <a href="http://arxiv.org/abs/1508.06576">"A Neural Algorithm of Artistic Style"</a>
+          by Leon A. Gatys, Alexander S. Ecker, and Matthias Bethge.
+          <a href='http://googleresearch.blogspot.com/2015/06/inceptionism-going-deeper-into-neural.html'>
+            Inceptionism</a>.
+          <a href='https://github.com/jcjohnson/torch-rnn' target='_blank'>
+            <h2>torch-rnn</h2>
+          </a>
+          Train character-level language models in torch, and sample from them to generate text.
+          The language model is implemented with efficient, reusable RNN and LSTM modules.
+          <a href='https://github.com/jcjohnson/simple-amt' target='_blank'>
+            <h2>simple-amt</h2>
+          </a>
+          A micro-framework that makes it easy to create and launch
+          tasks on Amazon's Mechanical Turk.
+          <a href='https://github.com/jcjohnson/cnn-benchmarks' target='_blank'>
+            <h2>cnn-benchmarks</h2>
+          </a>
+          Benchmarks for popular convolutional neural network models on different GPUs.
+        </div>
+        <div class='row vspace-top'></div>
+      </div>
+    </div>
+  </body>
 </html>
