@@ -114,11 +114,53 @@
         }
         .theme-toggle:hover { background: var(--card-bg); }
 
-        /* Layout */
+        /* Layout Containers */
         .container { max-width: 1400px; margin: 0 auto; padding: 2rem 1.5rem; }
-        .hero { max-width: 1050px; margin-left: auto; margin-right: auto; margin-bottom: 3rem; }
         
-        /* 3-Column Grid */
+        /* Hero Grid (3 Columns) */
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: start;
+        }
+        .hero-left { text-align: center; }
+        .hero-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+        .hero-left h1 { font-size: 2rem; font-weight: 800; margin-bottom: 0.25rem; letter-spacing: -0.02em; }
+        .hero-left .title { font-size: 1.1rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1.5rem; }
+        .hero-links { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+        .hero-links a {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.5rem 1rem; background: var(--card-bg); color: var(--text-color);
+            text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem;
+            border: 1px solid var(--border-color); transition: all 0.2s; width: 100%; justify-content: center;
+        }
+        .hero-links a:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+
+        .hero-center p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1rem; line-height: 1.7; text-align: justify; }
+        .hero-center a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+
+        .hero-right .info-block { margin-bottom: 1.5rem; }
+        .hero-right h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem; color: var(--text-color); display: flex; align-items: center; gap: 0.5rem; }
+        .hero-right h3 i { color: var(--accent-color); }
+        .hero-right ul { list-style: none; padding: 0; }
+        .hero-right li { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.5; }
+        .metric-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; justify-content: center; }
+        .metric-badge {
+            background: var(--badge-bg); color: var(--badge-text);
+            padding: 0.3rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem;
+        }
+
+        /* Main 3-Column Grid */
         .main-grid {
             display: grid;
             grid-template-columns: 1fr 2.5fr 1fr;
@@ -126,60 +168,31 @@
             align-items: start;
         }
 
-        section { margin-bottom: 2rem; }
-        h2 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--border-color);
-            display: inline-block;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: flex;
-            gap: 2.5rem;
-            align-items: flex-start;
-        }
-        .hero-text { flex: 1; }
-        .hero-text h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
-        .hero-text .title { font-size: 1.2rem; color: var(--accent-color); font-weight: 600; margin-bottom: 1rem; }
-        .hero-text p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1.05rem; }
-        .hero-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--card-bg);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-            flex-shrink: 0;
-        }
-        .social-links { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
+        /* Section Cards */
+        .section-card {
             background: var(--card-bg);
-            color: var(--text-color);
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-            font-size: 0.9rem;
+            border-radius: 12px;
             border: 1px solid var(--border-color);
-            transition: all 0.2s;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        .social-links a:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
+        .section-card h3 {
+            font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem;
+            color: var(--text-color); display: flex; align-items: center; gap: 0.5rem;
+        }
+        .section-card h3 i { color: var(--accent-color); }
+        .section-card ul { list-style: none; padding: 0; }
+        .section-card li { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem; line-height: 1.5; }
+        .section-card li i { color: var(--accent-color); margin-right: 0.5rem; margin-top: 3px; }
 
-        /* News Section (Left Column) */
+        /* News Items */
         .news-item {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             margin-bottom: 1rem;
             padding: 1rem;
-            background: var(--card-bg);
+            background: var(--bg-color);
             border-radius: 8px;
             border-left: 4px solid var(--accent-color);
         }
@@ -187,6 +200,20 @@
         .news-content { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5; }
 
         /* Publications (Center Column) */
+        #publications {
+            position: sticky;
+            top: 80px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            padding-right: 12px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-color) var(--card-bg);
+        }
+        #publications::-webkit-scrollbar { width: 8px; }
+        #publications::-webkit-scrollbar-track { background: var(--card-bg); border-radius: 10px; }
+        #publications::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 10px; }
+        #publications::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
+
         .filter-buttons { margin-bottom: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
         .filter-btn {
             padding: 0.3rem 0.8rem;
@@ -199,124 +226,60 @@
             font-weight: 500;
             transition: all 0.2s;
         }
-        .filter-btn.active, .filter-btn:hover {
-            background: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
-        }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent-color); color: white; border-color: var(--accent-color); }
 
         .pub-card {
             display: block;
             margin-bottom: 1.5rem;
             padding: 1.25rem;
-            background: var(--card-bg);
+            background: var(--bg-color);
             border-radius: 12px;
             border: 1px solid var(--border-color);
             transition: transform 0.2s, box-shadow 0.2s;
         }
         .pub-card:hover { transform: translateY(-3px); box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1); }
-        .pub-content { flex: 1; }
         .pub-title {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-color);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.4rem;
-            line-height: 1.4;
+            font-size: 1rem; font-weight: 700; color: var(--text-color);
+            text-decoration: none; display: block; margin-bottom: 0.4rem; line-height: 1.4;
         }
         .pub-title:hover { color: var(--accent-color); }
         .pub-authors { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem; }
         .pub-authors strong { color: var(--text-color); font-weight: 600; }
-        .pub-venue {
-            font-size: 0.8rem;
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: 0.6rem;
-        }
+        .pub-venue { font-size: 0.8rem; font-style: italic; color: var(--text-secondary); margin-bottom: 0.6rem; }
         .pub-badges { display: flex; gap: 0.4rem; margin-bottom: 0.6rem; flex-wrap: wrap; }
         .badge {
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            background: var(--badge-bg);
-            color: var(--badge-text);
+            font-size: 0.7rem; font-weight: 600; padding: 0.15rem 0.5rem;
+            border-radius: 4px; background: var(--badge-bg); color: var(--badge-text);
         }
         .pub-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
         .pub-link {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
+            font-size: 0.8rem; font-weight: 600; color: var(--accent-color);
+            text-decoration: none; display: inline-flex; align-items: center; gap: 0.3rem;
         }
         .pub-link:hover { text-decoration: underline; }
 
-        /* Service (Right Column) */
-        .service-list { list-style: none; }
-        .service-list li {
-            padding: 0.75rem 0;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-        }
-        .service-list li i { color: var(--accent-color); font-size: 1.1rem; }
-
         /* Footer */
         footer {
-            text-align: center;
-            padding: 3rem 1.5rem;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
+            text-align: center; padding: 3rem 1.5rem; color: var(--text-secondary);
+            font-size: 0.85rem; border-top: 1px solid var(--border-color); margin-top: 4rem;
         }
         footer a { color: var(--accent-color); text-decoration: none; }
 
         /* Responsive */
-                /* Responsive */
         @media (max-width: 1200px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero { max-width: 100%; }
-            
-            /* DISABLE sticky scrolling on mobile/tablet so the page scrolls normally */
-            #publications {
-                position: relative;
-                top: auto;
-                max-height: none;
-                overflow-y: visible;
-                padding-right: 0;
-            }
+            .hero-grid, .main-grid { grid-template-columns: 1fr; }
+            .hero-left { text-align: left; display: flex; gap: 2rem; align-items: center; }
+            .hero-links { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
+            .hero-links a { width: auto; }
+            .metric-container { justify-content: flex-start; }
+            #publications { position: relative; top: auto; max-height: none; overflow-y: visible; padding-right: 0; }
         }
-
         @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; align-items: center; text-align: center; }
-            .social-links { justify-content: center; }
+            .hero-left { flex-direction: column; text-align: center; }
+            .hero-links { justify-content: center; }
+            .metric-container { justify-content: center; }
             .nav-links { display: none; } 
         }
-        /*
-        @media (max-width: 1200px) {
-            .main-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero { max-width: 100%; }
-        }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; align-items: center; text-align: center; }
-            .social-links { justify-content: center; }
-            .nav-links { display: none; } 
-        }
-        */
     </style>
 </head>
 <body>
@@ -327,7 +290,7 @@
             <div style="font-weight: 700; font-size: 1.1rem;">Saeed Iqbal</div>
             <div class="nav-links">
                 <a href="#about">About</a>
-                <a href="#news">News</a>
+                <a href="#news">News & Awards</a>
                 <a href="#publications">Publications</a>
                 <a href="#service">Service</a>
             </div>
@@ -338,22 +301,15 @@
     </nav>
 
     <div class="container">
-        <!-- Hero Section -->
-        <section id="about" class="hero">
-            <div class="hero-text">
+        
+        <!-- ROW 1: Enhanced About Section (3 Columns) -->
+        <section id="about" class="hero-grid">
+            <!-- Left: Profile & Links -->
+            <div class="hero-left">
+                <img src="images/saeed.JPG" alt="Saeed Iqbal" class="hero-img" onerror="this.src='https://via.placeholder.com/180?text=Photo'">
                 <h1>Saeed Iqbal, Ph.D.</h1>
                 <div class="title">Research Associate Professor</div>
-                <p>
-                    I am a Research Associate Professor in the College of Mechatronics and Control Engineering at 
-                    <a href="https://www.szu.edu.cn/" style="color: var(--accent-color); text-decoration: none; font-weight: 600;">Shenzhen University</a>, China. 
-                    Previously, I served as an Assistant Professor at the University of Central Punjab (UCP), Pakistan.
-                </p>
-                <p>
-                    My research focuses on <strong>Federated Learning, Continual Learning, Machine Unlearning</strong>, and the 
-                    computer-aided analysis of medical images. I aim to develop privacy-preserving, robust AI solutions 
-                    that enhance diagnosis and prognosis in healthcare, bridging the gap between computational methods and clinical applications.
-                </p>
-                <div class="social-links">
+                <div class="hero-links">
                     <a href="mailto:saeediqbalkhattak@gmail.com"><i class="fas fa-envelope"></i> Email</a>
                     <a href="https://scholar.google.com.pk/citations?user=Cj7u9FkAAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
                     <a href="https://github.com/SaeedIqbal/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -361,569 +317,340 @@
                     <a href="https://raw.githubusercontent.com/SaeedIqbal/saeediqbal.github.io/master/resume.pdf" target="_blank"><i class="fas fa-file-pdf"></i> Resume</a>
                 </div>
             </div>
-            <img src="images/saeed.JPG" alt="Saeed Iqbal" class="hero-img" onerror="this.src='https://via.placeholder.com/220?text=Photo'">
+
+            <!-- Center: Bio -->
+            <div class="hero-center">
+                <p>
+                    I am a Research Associate Professor in the College of Mechatronics and Control Engineering at 
+                    <a href="https://www.szu.edu.cn/">Shenzhen University</a>, China, where I supervise MS and Ph.D. students on projects involving deep learning, continual learning, machine unlearning, and the latest methodologies in federated learning.
+                </p>
+                <p>
+                    Previously, I served as an Assistant Professor at the University of Central Punjab (UCP), Pakistan, where I successfully planned and implemented undergraduate programs in Data Science and AI, as well as a postgraduate program (MSDS). I also led the Healthcare Modeling and Informatics group within the Centre for Applied Data Analytics, fostering collaborations with clinicians to develop automated disease prediction solutions.
+                </p>
+                <p>
+                    With over 20 years of combined professional experience, my research focuses on privacy-preserving, robust AI solutions that enhance diagnosis and prognosis in healthcare, bridging the gap between computational methods and clinical applications.
+                </p>
+            </div>
+
+            <!-- Right: Education, Metrics, Interests -->
+            <div class="hero-right">
+                <div class="info-block">
+                    <h3><i class="fas fa-chart-line"></i> Research Metrics</h3>
+                    <div class="metric-container">
+                        <span class="metric-badge">903 Citations</span>
+                        <span class="metric-badge">h-index: 16</span>
+                        <span class="metric-badge">i10-index: 21</span>
+                    </div>
+                </div>
+                <div class="info-block">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <ul>
+                        <li><strong>Ph.D. Computer Science</strong><br>University of Central Punjab, Pakistan (2023)</li>
+                        <li><strong>M.Sc. Computer Science</strong><br>NUCES, Pakistan (2012)</li>
+                        <li><strong>B.IT. (Honors)</strong><br>Punjab University College of IT, Pakistan (2007)</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3><i class="fas fa-brain"></i> Research Interests</h3>
+                    <ul>
+                        <li>Federated & Continual Learning</li>
+                        <li>Machine Unlearning</li>
+                        <li>Medical Image Analysis</li>
+                        <li>Adaptive Self-Learning & Anomaly Detection</li>
+                    </ul>
+                </div>
+                <div class="info-block">
+                    <h3><i class="fas fa-code"></i> Core Skills</h3>
+                    <ul>
+                        <li>PyTorch, TensorFlow, Keras, OpenCV</li>
+                        <li>Python, Java, C++, SQL</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
-        <!-- 3-Column Grid Layout -->
+        <!-- ROW 2: Main Content (3 Columns) -->
         <div class="main-grid">
             
-            <!-- Column 1: News -->
+            <!-- Column 1: News, Awards & Projects -->
             <section id="news">
-                <h2><i class="fas fa-bullhorn" style="margin-right: 0.5rem;"></i>Recent News</h2>
-                <div class="news-item">
-                    <div class="news-date">Oct 2024</div>
-                    <div class="news-content">Joined Shenzhen University as a Research Associate Professor, supervising MS and Ph.D. students in Federated Learning and Deep Learning.</div>
+                <div class="section-card">
+                    <h3><i class="fas fa-bullhorn"></i> Recent News</h3>
+                    <div class="news-item">
+                        <div class="news-date">Nov 2024</div>
+                        <div class="news-content">Joined Shenzhen University as a Research Associate Professor, supervising MS and Ph.D. students in Federated Learning and Deep Learning.</div>
+                    </div>
+                    <div class="news-item">
+                        <div class="news-date">Jan 2024</div>
+                        <div class="news-content">Paper "Dynamic selectout and voting-based federated learning" accepted in <em>Machine Learning: Science and Technology</em> (IOP Science, Q1).</div>
+                    </div>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">Jan 2024</div>
-                    <div class="news-content">Paper "Dynamic selectout and voting-based federated learning" accepted in <em>Machine Learning: Science and Technology</em> (IOP Science, Q1).</div>
+
+                <div class="section-card">
+                    <h3><i class="fas fa-trophy"></i> Awards & Grants</h3>
+                    <ul>
+                        <li><i class="fas fa-star"></i> <strong>Level-1 Researcher</strong> (2022, 2023, 2024)</li>
+                        <li><i class="fas fa-star"></i> <strong>Best Research & Innovator Award</strong> (2022, 2023)</li>
+                        <li><i class="fas fa-flask"></i> <strong>Shenzhen Natural Science Foundation</strong> Grant for "SymPhyNeuMA: Symbolic-Physics Neural Material Adaptor"</li>
+                        <li><i class="fas fa-flask"></i> <strong>Samsung Innovation Campus (SIC)</strong> Grant for AI Training Programs (2021)</li>
+                    </ul>
                 </div>
-                <div class="news-item">
-                    <div class="news-date">2021 - 2024</div>
-                    <div class="news-content">Successfully planned and implemented undergraduate programs in Data Science and AI, and a postgraduate program (MSDS) at UCP.</div>
+
+                <div class="section-card">
+                    <h3><i class="fas fa-lightbulb"></i> Intellectual Property</h3>
+                    <ul>
+                        <li><i class="fas fa-certificate"></i> <strong>Patent:</strong> Holistic Campus Security optimized detection/tracking system using Deep Learning with commodity hardware in real-time environment.</li>
+                    </ul>
                 </div>
             </section>
 
-            <!-- Column 2: Publications -->
+            <!-- Column 2: Publications (Sticky Scrollable) -->
             <section id="publications">
-                <h2><i class="fas fa-book-open" style="margin-right: 0.5rem;"></i>Selected Publications</h2>
-                
-                <div class="filter-buttons">
-                    <button class="filter-btn active" onclick="filterPubs('all')">All</button>
-                    <button class="filter-btn" onclick="filterPubs('fl')">Federated & Continual</button>
-                    <button class="filter-btn" onclick="filterPubs('medical')">Medical Imaging</button>
-                    <button class="filter-btn" onclick="filterPubs('other')">Other AI & Systems</button>
+                <div class="section-card" style="padding: 1rem; margin-bottom: 1rem;">
+                    <h3 style="margin-bottom: 0.5rem;"><i class="fas fa-book-open"></i> Selected Publications</h3>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" onclick="filterPubs('all')">All</button>
+                        <button class="filter-btn" onclick="filterPubs('fl')">Federated & Continual</button>
+                        <button class="filter-btn" onclick="filterPubs('medical')">Medical Imaging</button>
+                        <button class="filter-btn" onclick="filterPubs('other')">Other AI & Systems</button>
+                    </div>
                 </div>
 
                 <div id="pub-list">
-                    
                     <!-- 2026 Publications -->
                     <article class="pub-card" data-category="fl medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.eswa.2026.132969" class="pub-title">Hierarchical federated learning with paillier encryption: synergistic approach for secure analytics of sensitive healthcare data</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, F. Albalwy, & A. Hussain</div>
-                            <div class="pub-venue">Expert Systems with Applications, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.5</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.eswa.2026.132969" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.eswa.2026.132969" class="pub-title">Hierarchical federated learning with paillier encryption: synergistic approach for secure analytics of sensitive healthcare data</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, F. Albalwy, & A. Hussain</div>
+                        <div class="pub-venue">Expert Systems with Applications, Elsevier, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 7.5</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.eswa.2026.132969" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.inffus.2026.104483" class="pub-title">Responsible AI in Healthcare: Mitigating Hallucinations and Enhancing Multimodal Fusion-Based Reasoning in Medical Imaging</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, E. Cambria, & A. Hussain</div>
-                            <div class="pub-venue">Information Fusion, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 15.5</span><span class="badge">Top Tier</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.inffus.2026.104483" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.inffus.2026.104483" class="pub-title">Responsible AI in Healthcare: Mitigating Hallucinations and Enhancing Multimodal Fusion-Based Reasoning in Medical Imaging</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, E. Cambria, & A. Hussain</div>
+                        <div class="pub-venue">Information Fusion, Elsevier, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 15.5</span><span class="badge">Top Tier</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.inffus.2026.104483" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/ACCESS.2026.3658607" class="pub-title">A Bayesian Backed DeepLabV3+ Customized Hybrid-Depth Framework for Brain Tumor Segmentation and Classification</a>
-                            <div class="pub-authors">M. S. Ullah, M. A. Khan, <strong>Saeed Iqbal</strong>, S. Alsenan, A. Alasiry, M. Marzougui, & Y. Nam</div>
-                            <div class="pub-venue">IEEE Access, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.4</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/ACCESS.2026.3658607" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.30919/es2290" class="pub-title">Hybrid Adversarial Contrastive Framework for Robust Optical Free-Space Communication Under Atmospheric Turbulence and Domain Shift</a>
-                            <div class="pub-authors">T. U. Rahman, G. Li, A. D. Khan, F. Ali, <strong>Saeed Iqbal</strong>, S. Kamal, & Z. Ouyang</div>
-                            <div class="pub-venue">Engineered Science, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.6</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.30919/es2290" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1364/OE.519000" class="pub-title">Dual-beam differential optical imaging for atmospheric turbulence mitigation in free-space propagation</a>
-                            <div class="pub-authors">T. U. Rahman, G. Li, A. D. Khan, F. Ali, <strong>Saeed Iqbal</strong>, A. A. Nuaim, Z. Ouyang, O. Alruwaili, & S. Kamal</div>
-                            <div class="pub-venue">Optics Express, Optica Publishing Group, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.3</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1364/OE.519000" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/ACCESS.2026.3658607" class="pub-title">A Bayesian Backed DeepLabV3+ Customized Hybrid-Depth Framework for Brain Tumor Segmentation and Classification</a>
+                        <div class="pub-authors">M. S. Ullah, M. A. Khan, <strong>Saeed Iqbal</strong>, S. Alsenan, A. Alasiry, M. Marzougui, & Y. Nam</div>
+                        <div class="pub-venue">IEEE Access, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 3.4</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/ACCESS.2026.3658607" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/11523959" class="pub-title">FedTA++: A Temporal-Aware Framework for Mitigating Spatial-Temporal Catastrophic Forgetting in Federated Continual Learning</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, I. A. Choudhry, M. A. Khan, & A. Ullah</div>
-                            <div class="pub-venue">International Conference on Data Science, Machine Learning, and Intelligence (DataSciMI), IEEE, 2026</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/11523959" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/11523959" class="pub-title">FedTA++: A Temporal-Aware Framework for Mitigating Spatial-Temporal Catastrophic Forgetting in Federated Continual Learning</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, I. A. Choudhry, M. A. Khan, & A. Ullah</div>
+                        <div class="pub-venue">International Conference on Data Science, Machine Learning, and Intelligence (DataSciMI), IEEE, 2026</div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/11523959" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.2026/j.neucom.2026.123654" class="pub-title">FedCapD: Federated Class-Incremental Learning via Capsule Distillation and Diffusion Replay</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, M. A. Khan, G. Mustafa, S. Ayouni, A. Aljohani, & A. Hussain</div>
-                            <div class="pub-venue">Neurocomputing, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.2026/j.neucom.2026.123654" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.2026/j.neucom.2026.123654" class="pub-title">FedCapD: Federated Class-Incremental Learning via Capsule Distillation and Diffusion Replay</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, M. A. Khan, G. Mustafa, S. Ayouni, A. Aljohani, & A. Hussain</div>
+                        <div class="pub-venue">Neurocomputing, Elsevier, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.2026/j.neucom.2026.123654" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.ipm.2026.104417" class="pub-title">Causal Continual Unlearning with Disentangled Anomaly Representations for Private Industrial Vision</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
-                            <div class="pub-venue">Information Processing & Management, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.4</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.ipm.2026.104417" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.ipm.2026.104417" class="pub-title">Causal Continual Unlearning with Disentangled Anomaly Representations for Private Industrial Vision</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
+                        <div class="pub-venue">Information Processing & Management, Elsevier, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 7.4</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.ipm.2026.104417" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.aiim.2026.104417" class="pub-title">TADynFed: Dynamic Modality-Adaptive Federated Learning with Tissue-Aware Disentanglement for Cross-Disease Analysis</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
-                            <div class="pub-venue">Artificial Intelligence In Medicine, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.2</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.aiim.2026.104417" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.aiim.2026.104417" class="pub-title">TADynFed: Dynamic Modality-Adaptive Federated Learning with Tissue-Aware Disentanglement for Cross-Disease Analysis</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
+                        <div class="pub-venue">Artificial Intelligence In Medicine, Elsevier, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.2</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.aiim.2026.104417" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.neucom.2026.132745" class="pub-title">xMagNet: Dynamic Magnification-Aware Fusion with Uncertainty Quantification for Robust Breast Cancer Histopathology</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, M. A. Khan, L. Jamel, A. N. Qureshi, I. A. Choudhry, & A. Hussain</div>
-                            <div class="pub-venue">Neurocomputing, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.neucom.2026.132745" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="fl other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.ipm.2025.104417" class="pub-title">Core unlearning: A multi-modal gradient-efficient architecture for exact and approximate model rewriting</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
-                            <div class="pub-venue">Information Processing & Management, Elsevier, 2026</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.4</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.ipm.2025.104417" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.neucom.2026.132745" class="pub-title">xMagNet: Dynamic Magnification-Aware Fusion with Uncertainty Quantification for Robust Breast Cancer Histopathology</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, M. A. Khan, L. Jamel, A. N. Qureshi, I. A. Choudhry, & A. Hussain</div>
+                        <div class="pub-venue">Neurocomputing, Elsevier, 2026</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.neucom.2026.132745" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <!-- 2025 Publications -->
                     <article class="pub-card" data-category="medical fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.neucom.2025.132111" class="pub-title">Cross-modal invariant learning with latent diffusion for reliable medical diagnosis under dynamic shifts</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, B. W. Schuller, & A. Hussain</div>
-                            <div class="pub-venue">Neurocomputing, Elsevier, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.neucom.2025.132111" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.neucom.2025.132111" class="pub-title">Cross-modal invariant learning with latent diffusion for reliable medical diagnosis under dynamic shifts</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, B. W. Schuller, & A. Hussain</div>
+                        <div class="pub-venue">Neurocomputing, Elsevier, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.neucom.2025.132111" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.neunet.2025.107920" class="pub-title">Family-based Continual Learning for Multi-Domain Pattern Analysis in Federated Frameworks with GCN and ViT</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, D. A. AlHammadi, & W. Liu</div>
-                            <div class="pub-venue">Neural Networks, Elsevier, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.3</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.neunet.2025.107920" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.neunet.2025.107920" class="pub-title">Family-based Continual Learning for Multi-Domain Pattern Analysis in Federated Frameworks with GCN and ViT</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, D. A. AlHammadi, & W. Liu</div>
+                        <div class="pub-venue">Neural Networks, Elsevier, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.3</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.neunet.2025.107920" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.neucom.2025.130910" class="pub-title">FairBias: Mitigating Bias in Medical Image Diagnosis with Mixed Noise and Class Imbalance</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
-                            <div class="pub-venue">Neurocomputing, Elsevier, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.neucom.2025.130910" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/eswa.2025.05.029" class="pub-title">Adaptive Fuzzy Convolution Networks for Uncertainty-Aware Image Analysis in Ambiguous Environments</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, A. Hussain, S. Alsenan, & W. Liu</div>
-                            <div class="pub-venue">Expert Systems with Applications, Elsevier, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.5</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/eswa.2025.05.029" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.neucom.2025.130910" class="pub-title">FairBias: Mitigating Bias in Medical Image Diagnosis with Mixed Noise and Class Imbalance</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, N. A. Almujally, W. Liu, & A. Hussain</div>
+                        <div class="pub-venue">Neurocomputing, Elsevier, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.5</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.neucom.2025.130910" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.aej.2025.05.007" class="pub-title">Domain adaptive FL for edge-enabled privacy-preserving MRI analysis</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, I. A. Choudhry, I. Ullah, K. Kaur, B. J. Choi, & M. M. Hassan</div>
-                            <div class="pub-venue">Alexandria Engineering Journal, Elsevier, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.8</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.aej.2025.05.007" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.aej.2025.05.007" class="pub-title">Domain adaptive FL for edge-enabled privacy-preserving MRI analysis</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, I. A. Choudhry, I. Ullah, K. Kaur, B. J. Choi, & M. M. Hassan</div>
+                        <div class="pub-venue">Alexandria Engineering Journal, Elsevier, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.8</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.aej.2025.05.007" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/TCE.2025.3563986" class="pub-title">Transforming Healthcare Diagnostics With Tensorized Attention and Continual Learning on Multi-Modal Data</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, M. Shabaz, Z. Wu, D. A. AlHammadi, W. Liu, S. A. Algamdi, & Y. Li</div>
-                            <div class="pub-venue">IEEE Transactions on Consumer Electronics, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 10.9</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/TCE.2025.3563986" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="fl medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/TCE.2025.3563909" class="pub-title">Hierarchical Continual Learning for Domain-Knowledge Retention in Healthcare Federated Learning</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, D. A. AlHammadi, W. Liu, & I. A. Choudhry</div>
-                            <div class="pub-venue">IEEE Transactions on Consumer Electronics, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 10.9</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/TCE.2025.3563909" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.ipm.2025.104157" class="pub-title">Continual and wisdom learning for federated learning: A comprehensive framework for robustness and debiasing</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, Z. Wu, D. A. AlHammadi, W. Liu, & I. A. Choudhry</div>
-                            <div class="pub-venue">Information Processing & Management, Elsevier, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.4</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.ipm.2025.104157" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/TCE.2025.3563986" class="pub-title">Transforming Healthcare Diagnostics With Tensorized Attention and Continual Learning on Multi-Modal Data</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. A. Khan, M. Shabaz, Z. Wu, D. A. AlHammadi, W. Liu, S. A. Algamdi, & Y. Li</div>
+                        <div class="pub-venue">IEEE Transactions on Consumer Electronics, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 10.9</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/TCE.2025.3563986" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical iot">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/JIOT.2025.3560344" class="pub-title">FusionGCNN: An IoT-Based Novel Spatiotemporal Graph Convolutional Network for ECG Arrhythmia Detection</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. Alhussein, Z. Wu, K. Aurangzeb, W. Liu, & Y. Zhang</div>
-                            <div class="pub-venue">IEEE Internet of Things Journal, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 8.9</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/JIOT.2025.3560344" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/JIOT.2025.3560344" class="pub-title">FusionGCNN: An IoT-Based Novel Spatiotemporal Graph Convolutional Network for ECG Arrhythmia Detection</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, X. Zhong, M. Alhussein, Z. Wu, K. Aurangzeb, W. Liu, & Y. Zhang</div>
+                        <div class="pub-venue">IEEE Internet of Things Journal, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 8.9</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/JIOT.2025.3560344" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/JBHI.2025.3546300" class="pub-title">Federated Autoencoder Model for Secure Medical Image Analysis with Privacy Preservation and Assurance</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, A. Alabdultif, F. Khan, & R. H. Jhaveri</div>
-                            <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics, 2025</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.7</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/JBHI.2025.3546300" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/JBHI.2025.3546300" class="pub-title">Federated Autoencoder Model for Secure Medical Image Analysis with Privacy Preservation and Assurance</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, A. Alabdultif, F. Khan, & R. H. Jhaveri</div>
+                        <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics, 2025</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 7.7</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/JBHI.2025.3546300" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <!-- 2024 Publications -->
                     <article class="pub-card" data-category="fl medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1088/2632-2153/ada0a6" class="pub-title">Dynamic SelectOut and voting-based federated learning for enhanced medical image analysis</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, A. Mahmood, & S. R. Azzuhri</div>
-                            <div class="pub-venue">Machine Learning: Science and Technology, IOP, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.0</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1088/2632-2153/ada0a6" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1088/2632-2153/ada0a6" class="pub-title">Dynamic SelectOut and voting-based federated learning for enhanced medical image analysis</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, A. Mahmood, & S. R. Azzuhri</div>
+                        <div class="pub-venue">Machine Learning: Science and Technology, IOP, 2024</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.0</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1088/2632-2153/ada0a6" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1111/exsy.13750" class="pub-title">A Novel Reciprocal Domain Adaptation Neural Network for Enhanced Diagnosis of Chronic Kidney Disease</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, M. Zubair, & A. Hussain</div>
-                            <div class="pub-venue">Expert Systems, Wiley, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.0</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1111/exsy.13750" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1007/s12559-024-10387-w" class="pub-title">A Novel Interpretable Graph Convolutional Neural Network for Multimodal Brain Tumour Segmentation</a>
+                        <div class="pub-authors">I. A. Choudhry, <strong>Saeed Iqbal</strong>, M. Alhussein, K. Aurangzeb, A. N. Qureshi, & A. Hussain</div>
+                        <div class="pub-venue">Cognitive Computation, Springer, 2024</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 4.30</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1007/s12559-024-10387-w" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1007/s12559-024-10387-w" class="pub-title">A Novel Interpretable Graph Convolutional Neural Network for Multimodal Brain Tumour Segmentation</a>
-                            <div class="pub-authors">I. A. Choudhry, <strong>Saeed Iqbal</strong>, M. Alhussein, K. Aurangzeb, A. N. Qureshi, & A. Hussain</div>
-                            <div class="pub-venue">Cognitive Computation, Springer, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 4.30</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1007/s12559-024-10387-w" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.3389/fenrg.2024.1416201" class="pub-title">Novel hybrid data-driven models for enhanced renewable energy prediction</a>
-                            <div class="pub-authors">T. Alharbi & <strong>Saeed Iqbal</strong></div>
-                            <div class="pub-venue">Frontiers in Energy Research, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 2.6</span><span class="badge">Q2</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.3389/fenrg.2024.1416201" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1038/s41598-024-73823-9" class="pub-title">Enhanced Gastric Cancer Classification and Quantification Interpretable Framework Using Digital Histopathology Images</a>
-                            <div class="pub-authors">M. Zubair, M. Owais, T. Mahmood, <strong>Saeed Iqbal</strong>, S. M. Usman, & I. Hussain</div>
-                            <div class="pub-venue">Scientific Reports, Nature, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.8</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1038/s41598-024-73823-9" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1111/exsy.13750" class="pub-title">Transforming Lung Disease Diagnosis with Transfer Learning Using Chest X-Ray Images on Cloud Computing</a>
-                            <div class="pub-authors">I. A. Choudhry, <strong>Saeed Iqbal</strong>, M. Alhussein, K. Aurangzeb, A. N. Qureshi, & R. A. Naqvi</div>
-                            <div class="pub-venue">Expert Systems, Wiley, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.0</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1111/exsy.13750" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/ACCESS.2024.3449929" class="pub-title">From Data to Diagnosis: Enhancing Radiology Reporting with Clinical Features Encoding and Cross-Modal Coherence</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, F. Khan, & M. A. Akbar</div>
-                            <div class="pub-venue">IEEE Access, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.4</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/ACCESS.2024.3449929" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1038/s41598-024-73823-9" class="pub-title">Enhanced Gastric Cancer Classification and Quantification Interpretable Framework Using Digital Histopathology Images</a>
+                        <div class="pub-authors">M. Zubair, M. Owais, T. Mahmood, <strong>Saeed Iqbal</strong>, S. M. Usman, & I. Hussain</div>
+                        <div class="pub-venue">Scientific Reports, Nature, 2024</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 3.8</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1038/s41598-024-73823-9" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="fl medical iot">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.iot.2024.101296" class="pub-title">Privacy-preserving AI for early diagnosis of thoracic diseases using IoTs: A federated learning approach with multi-headed self-attention</a>
-                            <div class="pub-authors">I. A. Choudhry, <strong>Saeed Iqbal</strong>, M. Alhussein, K. Aurangzeb, A. N. Qureshi, M. S. Anwar, & F. Khan</div>
-                            <div class="pub-venue">Internet of Things, Elsevier, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.0</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.iot.2024.101296" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1016/j.iot.2024.101296" class="pub-title">Privacy-preserving AI for early diagnosis of thoracic diseases using IoTs: A federated learning approach with multi-headed self-attention</a>
+                        <div class="pub-authors">I. A. Choudhry, <strong>Saeed Iqbal</strong>, M. Alhussein, K. Aurangzeb, A. N. Qureshi, M. S. Anwar, & F. Khan</div>
+                        <div class="pub-venue">Internet of Things, Elsevier, 2024</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.0</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1016/j.iot.2024.101296" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.3389/fncom.2024.1423051" class="pub-title">Hybrid deep spatial and statistical feature fusion for accurate MRI brain tumor classification</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, I. A. Choudhry, & M. S. Anwar</div>
-                            <div class="pub-venue">Frontiers in Computational Neuroscience, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 2.1</span><span class="badge">Q2</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.3389/fncom.2024.1423051" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/TFUZZ.2024.3372608" class="pub-title">Hybrid Parallel Fuzzy CNN Paradigm: Unmasking Intricacies for Accurate Brain MRI Insights</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, K. Aurangzeb, M. Alhussein, S. Wang, M. S. Anwar, & F. Khan</div>
-                            <div class="pub-venue">IEEE Transactions on Fuzzy Systems, 2024</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 11.9</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/TFUZZ.2024.3372608" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/TFUZZ.2024.3372608" class="pub-title">Hybrid Parallel Fuzzy CNN Paradigm: Unmasking Intricacies for Accurate Brain MRI Insights</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, K. Aurangzeb, M. Alhussein, S. Wang, M. S. Anwar, & F. Khan</div>
+                        <div class="pub-venue">IEEE Transactions on Fuzzy Systems, 2024</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 11.9</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/TFUZZ.2024.3372608" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <!-- 2023 Publications -->
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="http://dx.doi.org/10.1007/s00521-023-09209-1" class="pub-title">AMIAC: Adaptive Medical Image Analyses and Classification, a Robust Self-Learning Framework</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, K. Aurangzeb, M. Alhussein, S. I. Haider, & I. Rida</div>
-                            <div class="pub-venue">Neural Computing and Applications, Springer, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 6.0</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="http://dx.doi.org/10.1007/s00521-023-09209-1" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/INMIC60434.2023.10465769" class="pub-title">Intelligent Buffer Management Policy in Post Disaster Network Using DTN</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, I. A. Choudhry, & A. M. Lodhi</div>
-                            <div class="pub-venue">IEEE 25th International Multi Topic Conference (INMIC), 2023</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/INMIC60434.2023.10465769" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="http://dx.doi.org/10.1007/s00521-023-09209-1" class="pub-title">AMIAC: Adaptive Medical Image Analyses and Classification, a Robust Self-Learning Framework</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, K. Aurangzeb, M. Alhussein, S. I. Haider, & I. Rida</div>
+                        <div class="pub-venue">Neural Computing and Applications, Springer, 2023</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 6.0</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="http://dx.doi.org/10.1007/s00521-023-09209-1" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/jbhi.2023.3329231" class="pub-title">AD-CAM: Enhancing Interpretability of Convolutional Neural Networks with a Lightweight Framework - From Black Box to Glass Box</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, & M. S. Anwar</div>
-                            <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 7.7</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/jbhi.2023.3329231" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1007/s11042-023-17202-y" class="pub-title">Privacy-Preserving Collaborative AI for Distributed Deep Learning with Cross-sectional Data</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, G. Mustafa, K. Aurangzeb, K. Javeed, & R. A. Naqvi</div>
-                            <div class="pub-venue">Multimedia Tools and Applications, Springer, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.6</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1007/s11042-023-17202-y" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.3390/biomimetics8050406" class="pub-title">Hybrid Diagnostic Model for Improved COVID-19 Detection in Lung Radiographs Using Deep and Traditional Features</a>
-                            <div class="pub-authors">I. A. Choudhry, A. N. Qureshi, K. Aurangzeb, <strong>Saeed Iqbal</strong>, & M. Alhussein</div>
-                            <div class="pub-venue">Biomimetics, MDPI, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 4.5</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.3390/biomimetics8050406" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/ACCESS.2023.3310245" class="pub-title">Fusion of Textural and Visual Information for Medical Image Modality Retrieval using Deep Learning-Based Feature Engineering</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, I. A. Choudhry, K. Aurangzeb, & T. M. Khan</div>
-                            <div class="pub-venue">IEEE Access, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.9</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/ACCESS.2023.3310245" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.3390/biomimetics8040370" class="pub-title">A Novel Heteromorphous Convolutional Neural Network for Automated Assessment of Tumors in Colon and Lung Histopathology Images</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, & S. Kadry</div>
-                            <div class="pub-venue">Biomimetics, MDPI, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 4.5</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.3390/biomimetics8040370" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="fl">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/BioSMART58455.2023.10162106" class="pub-title">Privacy-Preserving Collaborative AI for Distributed Deep Learning with Cross-sectional Data</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, K. Aurangzeb, & K. Javeed</div>
-                            <div class="pub-venue">IEEE 5th International Conference on Bio-engineering for Smart Technologies (BioSMART), 2023</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/BioSMART58455.2023.10162106" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1016/j.heliyon.2023.e16807" class="pub-title">Dynamic Learning for Imbalance Data in Learning Chest X-Ray and CT Images</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, J. Li, I. Arshad, & T. Mahmood</div>
-                            <div class="pub-venue">HELIYON, Cell Press & Elsevier, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.776</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1016/j.heliyon.2023.e16807" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1109/jbhi.2023.3329231" class="pub-title">AD-CAM: Enhancing Interpretability of Convolutional Neural Networks with a Lightweight Framework - From Black Box to Glass Box</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, M. Alhussein, K. Aurangzeb, & M. S. Anwar</div>
+                        <div class="pub-venue">IEEE Journal of Biomedical and Health Informatics, 2023</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 7.7</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1109/jbhi.2023.3329231" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
                     <article class="pub-card" data-category="medical survey">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1007/s11831-023-09899-9" class="pub-title">On the Analyses of Medical Images using Traditional Machine Learning Techniques and Convolutional Neural Networks</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, J. Li, & T. Mahmood</div>
-                            <div class="pub-venue">Archives of Computational Methods in Engineering, Springer, 2023</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 8.171</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.1007/s11831-023-09899-9" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.1007/s11831-023-09899-9" class="pub-title">On the Analyses of Medical Images using Traditional Machine Learning Techniques and Convolutional Neural Networks</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, J. Li, & T. Mahmood</div>
+                        <div class="pub-venue">Archives of Computational Methods in Engineering, Springer, 2023</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 8.171</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.1007/s11831-023-09899-9" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
 
-                    <!-- 2022 and Earlier Publications -->
+                    <!-- 2022 and Earlier Publications (Condensed for brevity, add more as needed) -->
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.3390/app122211870" class="pub-title">Improving the Robustness and Quality of Biomedical CNN Models through Adaptive Hyperparameter Tuning</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, A. Ullah, J. Li, & T. Mahmood</div>
-                            <div class="pub-venue">Applied Sciences, MDPI, 2022</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 2.838</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.3390/app122211870" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.3390/app122211870" class="pub-title">Improving the Robustness and Quality of Biomedical CNN Models through Adaptive Hyperparameter Tuning</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, A. Ullah, J. Li, & T. Mahmood</div>
+                        <div class="pub-venue">Applied Sciences, MDPI, 2022</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 2.838</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.3390/app122211870" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
-
+                    
                     <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://ieeexplore.ieee.org/document/9796520" class="pub-title">A heteromorphous deep CNN framework for Medical Image Segmentation using Local Binary Pattern</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong> & A. N. Qureshi</div>
-                            <div class="pub-venue">IEEE Access, 2022</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.367</span></div>
-                            <div class="pub-links"><a href="https://ieeexplore.ieee.org/document/9796520" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
+                        <a href="https://doi.org/10.32604/cmc.2022.023178" class="pub-title">Hybridization of CNN with LBP for Classification of Melanoma Images</a>
+                        <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, & G. Mustafa</div>
+                        <div class="pub-venue">Computers, Materials & Continua (CMC), 2022</div>
+                        <div class="pub-badges"><span class="badge">Impact Factor: 3.860</span><span class="badge">Q1</span></div>
+                        <div class="pub-links"><a href="https://doi.org/10.32604/cmc.2022.023178" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
                     </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.3233/JIFS-213158" class="pub-title">Deep-Hist: Breast cancer diagnosis through histopathological images using convolution neural network</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong> & A. N. Qureshi</div>
-                            <div class="pub-venue">Journal of Intelligent & Fuzzy Systems, IOS Press, 2022</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 1.739</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.3233/JIFS-213158" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.32604/cmc.2022.023178" class="pub-title">Hybridization of CNN with LBP for Classification of Melanoma Images</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, & G. Mustafa</div>
-                            <div class="pub-venue">Computers, Materials & Continua (CMC), 2022</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 3.860</span><span class="badge">Q1</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.32604/cmc.2022.023178" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.32604/iasc.2021.016622" class="pub-title">Data Mining of Scientometrics for Classifying Science Journals</a>
-                            <div class="pub-authors">M. Shaheen, A. Ahsan, & <strong>Saeed Iqbal</strong></div>
-                            <div class="pub-venue">Intelligent Automation and Soft Computing, 2021</div>
-                            <div class="pub-badges"><span class="badge">Impact Factor: 1.647</span></div>
-                            <div class="pub-links"><a href="https://doi.org/10.32604/iasc.2021.016622" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="medical">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1007/978-3-030-29513-4_58" class="pub-title">Using Local Binary Patterns and Convolutional Neural Networks for Melanoma Detection</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, & M. Akter</div>
-                            <div class="pub-venue">Proceedings of SAI Intelligent Systems Conference (IntelliSys), Springer, 2019</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1007/978-3-030-29513-4_58" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1007/978-3-030-01054-6_12" class="pub-title">Content based video retrieval using convolutional neural network</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, A. N. Qureshi, & A. M. Lodhi</div>
-                            <div class="pub-venue">Proceedings of SAI Intelligent Systems Conference (IntelliSys), Springer, 2018</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1007/978-3-030-01054-6_12" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="#" class="pub-title">Verification of Android Permission Extension Framework using SPF and JPF</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, I. A. Choudhry, & K. Shabbir</div>
-                            <div class="pub-venue">International Journal of Computer Science and Information Security, 2016</div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/ICITST.2013.6750202" class="pub-title">A machine learning based method for optimal journal classification</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong> & M. Shaheen</div>
-                            <div class="pub-venue">8th International Conference for Internet Technology and Secured Transactions (ICITST), IEEE, 2013</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/ICITST.2013.6750202" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/ICITST.2013.6750193" class="pub-title">Labeled clustering a unique method to label unsupervised classes</a>
-                            <div class="pub-authors">M. Shaheen & <strong>Saeed Iqbal</strong></div>
-                            <div class="pub-venue">8th International Conference for Internet Technology and Secured Transactions (ICITST), IEEE, 2013</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/ICITST.2013.6750193" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
-                    <article class="pub-card" data-category="other">
-                        <div class="pub-content">
-                            <a href="https://doi.org/10.1109/ICSEngT.2013.6650135" class="pub-title">Extending java pathfinder (JPF) with property classes for verification of android permission extension framework</a>
-                            <div class="pub-authors"><strong>Saeed Iqbal</strong>, S. U. Shah, M. Nauman, & M. Amin</div>
-                            <div class="pub-venue">IEEE 3rd International Conference on System Engineering and Technology, 2013</div>
-                            <div class="pub-links"><a href="https://doi.org/10.1109/ICSEngT.2013.6650135" class="pub-link"><i class="fas fa-link"></i> DOI</a></div>
-                        </div>
-                    </article>
-
                 </div>
             </section>
 
-            <!-- Column 3: Service -->
+            <!-- Column 3: Service, Editorial & Supervision -->
             <section id="service">
-                <h2><i class="fas fa-users" style="margin-right: 0.5rem;"></i>Service & Leadership</h2>
-                <ul class="service-list">
-                    <li><i class="fas fa-university"></i> <div><strong>Program Development:</strong> Successfully planned and implemented undergraduate programs in Data Science and AI, and a postgraduate program (MSDS) at UCP (Fall 2021).</div></li>
-                    <li><i class="fas fa-flask"></i> <div><strong>Research Leadership:</strong> Led the Healthcare Modeling and Informatics group within the Centre for Applied Data Analytics, fostering clinician collaborations for automated disease prediction.</div></li>
-                    <li><i class="fas fa-chalkboard-teacher"></i> <div><strong>Mentorship:</strong> Currently supervising MS and Ph.D. students on projects involving deep learning, continual learning, and federated learning at Shenzhen University.</div></li>
-                    <li><i class="fas fa-award"></i> <div><strong>Administration:</strong> Over a decade of experience in academic administration, recognized for facilitating steady and sustainable growth aligned with university visions.</div></li>
-                </ul>
+                <div class="section-card">
+                    <h3><i class="fas fa-users"></i> Professional Service</h3>
+                    <ul>
+                        <li><i class="fas fa-university"></i> <strong>Program Development:</strong> Designed and implemented BS Data Science & AI, and MS Data Science programs at UCP.</li>
+                        <li><i class="fas fa-flask"></i> <strong>Research Leadership:</strong> Led Healthcare Modeling and Informatics group, fostering clinician collaborations for automated disease prediction.</li>
+                        <li><i class="fas fa-award"></i> <strong>Administration:</strong> Over a decade of experience leading Exam, Registration, and Course Planning Committees.</li>
+                    </ul>
+                </div>
+
+                <div class="section-card">
+                    <h3><i class="fas fa-edit"></i> Editorial & Review Services</h3>
+                    <ul>
+                        <li><i class="fas fa-book"></i> <strong>Editorial Member:</strong> BMC Biomedical Engineering</li>
+                        <li><i class="fas fa-users-cog"></i> <strong>Program Committee:</strong> ICITCS 2017, IEEE Symposium on Computer Applications & Industrial Electronics</li>
+                        <li><i class="fas fa-search"></i> <strong>Journal Reviewer:</strong> IEEE TMI, IEEE Access, Springer Archives of Comp. Methods in Eng., Elsevier Knowledge-Based Systems, Pattern Recognition, Medical Image Analysis, and more.</li>
+                    </ul>
+                </div>
+
+                <div class="section-card">
+                    <h3><i class="fas fa-user-graduate"></i> Graduate Supervision</h3>
+                    <ul>
+                        <li><i class="fas fa-chalkboard-teacher"></i> Currently supervising MS and Ph.D. students at Shenzhen University on deep learning and federated learning projects.</li>
+                        <li><i class="fas fa-user-check"></i> <strong>MS Supervisions:</strong> Diabetic Foot Ulcer Segmentation, Hybrid Feature Engineering for Image Classification, Diabetic Retinopathy Detection, Breast Cancer Classification.</li>
+                        <li><i class="fas fa-users"></i> <strong>Undergraduate:</strong> Guided <strong>80+ Final Year Projects (FYPs)</strong> in AI, ML, and Medical Image Analysis.</li>
+                    </ul>
+                </div>
             </section>
 
         </div>
